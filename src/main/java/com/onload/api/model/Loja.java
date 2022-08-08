@@ -38,7 +38,7 @@ public class Loja {
     @NotBlank(message = "telefone required")
     private String telefone;
 
-    @Email(message = "email inválido")
+    @Email(message = "email invalido")
     private String email;
 
     @NotBlank(message = "endereco required")

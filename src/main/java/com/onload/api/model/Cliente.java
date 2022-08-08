@@ -30,16 +30,16 @@ public class Cliente {
 
     private LocalDate data = LocalDate.now();
 
-    @NotBlank(message = "o nome é obrigátorio")
+    @NotBlank(message = "nome required")
     private String nome;
 
-    @NotBlank(message = "o telefone é obrigátorio")
+    @NotBlank(message = "telefone required")
     private String telefone;
 
-    @Email(message = "email inválido")
+    @Email(message = "email required")
     private String email;
 
-    @NotBlank(message = "o cep é obrigátorio")
+    @NotBlank(message = "cep required")
     private String cep;
 
     @JsonBackReference
