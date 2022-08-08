@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -35,7 +36,7 @@ public class Cliente {
     @NotBlank(message = "o telefone é obrigátorio")
     private String telefone;
 
-    @NotBlank(message = "o email é obrigátorio")
+    @Email(message = "email inválido")
     private String email;
 
     @NotBlank(message = "o cep é obrigátorio")

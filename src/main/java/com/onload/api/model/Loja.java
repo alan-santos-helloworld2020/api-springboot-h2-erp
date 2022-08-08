@@ -3,7 +3,6 @@ package com.onload.api.model;
 import java.time.LocalDate;
 import java.util.List;
 
-import javax.annotation.Generated;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -38,7 +38,7 @@ public class Loja {
     @NotBlank(message = "telefone required")
     private String telefone;
 
-    @NotBlank(message = "email required")
+    @Email(message = "email inválido")
     private String email;
 
     @NotBlank(message = "endereco required")
@@ -52,7 +52,7 @@ public class Loja {
 
     @JsonManagedReference
     @OneToMany(targetEntity = Cliente.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "CLIENTE_ID")
+    @JoinColumn(name = "ID_CLIENTE")
     public List<Cliente> clientes;
 
 }
